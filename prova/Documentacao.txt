@@ -1,0 +1,200 @@
+
+	"info": {
+		"_postman_id": "0c5f3748-0a45-41b8-8e57-2545d67e01c1",
+		"name": "minha-api",
+		"description": "documentação da api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33176078"
+	},
+	"item": 
+		{
+			"name": "autentificacao",
+			"item": [
+				{
+					"name": "criar login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"augusto\",\r\n    \"email\": \"augusto.costa@iesb.edu.br\",\r\n    \"senha\": \"270420000\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/auth/registro",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"auth",
+								"registro"
+							]
+						},
+						"description": "criar login para poder acesar as informação"
+					},
+					"response": []
+				},
+				{
+					"name": "loga",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"augusto.costa@iesb.edu.br\",\r\n    \"senha\": \"270420\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/auth/login",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": "Pedir autorização para jerau touken se vc tiver cadastro"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "funcionario",
+			"item": [
+				{
+					"name": "criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Juliana Silva\",\r\n    \"cpfCnpj\": \"01234567890\",\r\n    \"email\": \"juliana@example.com\",\r\n    \"telefone\": \"(21)980054321\",\r\n    \"dataContratacao\": \"2024-05-12\",\r\n    \"dataNascimento\": \"1993-11-28\",\r\n    \"genero\": \"Feminino\",\r\n    \"endereco\": {\r\n        \"cep\": \"87654321\",\r\n        \"uf\": \"RJ\",\r\n        \"logradouro\": \"Rua das Flores\",\r\n        \"localidade\": \"Rio de Janeiro\",\r\n        \"bairro\": \"Ipanema\",\r\n        \"numero\": \"800\",\r\n        \"complemento\": \"Casa 3\"\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/funcionario",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"funcionario"
+							]
+						},
+						"description": "usado para criar funcionario"
+					},
+					"response": []
+				},
+				{
+					"name": "id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/funcionario/6665c62b7fe12c6a36a1c0bd",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"funcionario",
+								"6665c62b7fe12c6a36a1c0bd"
+							]
+						},
+						"description": "Usado para puxa o funcionario pelo id"
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n    {\r\n        \"endereco\": {\r\n            \"cep\": \"12345678\",\r\n            \"uf\": \"SP\",\r\n            \"logradouro\": \"Avenida Brasil\",\r\n            \"localidade\": \"São Paulo\",\r\n            \"bairro\": \"Centro\",\r\n            \"numero\": \"100\",\r\n            \"complemento\": \"Apto 101\"\r\n        },\r\n        \"nome\": \"ana pereira da s\",\r\n        \"cpfCnpj\": \"12345678900\",\r\n        \"email\": \"ana@example.com\",\r\n        \"telefone\": \"11984454321\",\r\n        \"dataContratacao\": \"2023-05-01T00:00:00.000Z\",\r\n        \"dataNascimento\": \"1990-01-01T00:00:00.000Z\",\r\n        \"genero\": \"Feminino\",\r\n        \"createdAt\": \"2024-06-09T15:11:39.658Z\",\r\n        \"updatedAt\": \"2024-06-09T15:11:39.658Z\",\r\n        \"__v\": 0\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/funcionario/6665c62b7fe12c6a36a1c0bd",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"funcionario",
+								"6665c62b7fe12c6a36a1c0bd"
+							]
+						},
+						"description": "Usado para atualizar os dados do cliente"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/funcionario/6665e2cf6134a78ee3f03542",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"funcionario",
+								"6665e2cf6134a78ee3f03542"
+							]
+						},
+						"description": "Usado para deleta o funcionario pelo id"
+					},
+					"response": []
+				},
+				{
+					"name": "busca",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/funcionario",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"funcionario"
+							]
+						},
+						"description": "Usado para busca todos os funcionario cadastrado"
+					},
+					"response": []
+				}
+			],
+			"description": "todas as informação como far para verifica os dados dos funcionario"
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"João da Silva\",\r\n    \"cpfCnpj\": \"12345678911\",\r\n    \"telefone\": \"(11)987554321\",\r\n    \"endereco\": {\r\n        \"cep\": \"12345678\",\r\n        \"uf\": \"SP\",\r\n        \"logradouro\": \"Rua das Flores\",\r\n        \"localidade\": \"São Paulo\",\r\n        \"bairro\": \"Centro\",\r\n        \"numero\": \"100\",\r\n        \"complemento\": \"Apto 101\"\r\n    }\r\n}\r\n",
+							"options": {
+								"raw
